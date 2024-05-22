@@ -6,6 +6,6 @@ terraform {
 }
 
 provider "google" {
-  project = var.project
-  region = var.region
+  project = "vn-cloud-resume-api-challenge"
+  region = "us-central1"
 }
