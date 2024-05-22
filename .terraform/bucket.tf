@@ -1,8 +1,8 @@
 resource "google_storage_bucket" "raw" {
-  project = "vn-cloud-resume-api-challenge"
+  project = var.project
   name = "raw"
   force_destroy = false
   uniform_bucket_level_access = true
-  location = "us-central1"
+  location = var.region
 #   labels = local.labels
 }
