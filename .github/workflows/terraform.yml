@@ -63,7 +63,7 @@ jobs:
       run:
         shell: bash
         #Inform a working directory if .tf files are not in root folder
-        working-directory: ./terraform 
+        working-directory: .terraform 
 
     steps:
     # Checkout the repository to the GitHub Actions runner
