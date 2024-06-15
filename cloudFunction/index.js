@@ -9,7 +9,7 @@ const { Firestore } = require("@google-cloud/firestore");
  * @param {Object} req Cloud Function request context.
  * @param {Object} res Cloud Function response context.
  */
-exports.helloWorld = (req, res) => {
+exports.getResumeData = (req, res) => {
   let message = req.query.message || req.body.message || "Hello World";
   res.status(200).send(message);
 };
