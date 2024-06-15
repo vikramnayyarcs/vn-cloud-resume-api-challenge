@@ -39,7 +39,7 @@ resource "google_cloudfunctions2_function" "function" {
 
   build_config {
     runtime     = "nodejs16"
-    entry_point = "getResumeData" # Set the entry point 
+    entry_point = "getResumeData" # Set the entry point.
     source {
       storage_source {
         bucket = google_storage_bucket.terf_bucket_tff.name
