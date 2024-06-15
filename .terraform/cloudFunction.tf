@@ -16,7 +16,7 @@ resource "google_storage_bucket_object" "source_code" {
 resource "google_cloudfunctions_function_iam_member" "allow_access_tff" {
   region         = "us-central1"
   project = "vn-cloud-resume-api-challenge"
-  cloud_function = google_cloudfunctions_function.fun_from_tff.name
+  cloud_function = "vn-cloud-resume-api-challenge-cloud-function"
   role           = "roles/cloudfunctions.invoker"
   member         = "allUsers"
 }
