@@ -13,14 +13,6 @@ resource "google_storage_bucket_object" "source_code" {
   source = "../cloudFunction.zip"
 }
 
-resource "google_cloudfunctions_function_iam_member" "allow_access_tff" {
-  region         = "us-central1"
-  project = "vn-cloud-resume-api-challenge"
-  cloud_function = "vn-cloud-resume-api-challenge-cloud-function"
-  role           = "roles/cloudfunctions.invoker"
-  member         = "allUsers"
-}
-
 resource "google_cloudfunctions2_function" "function" {
   name        = "cloud-resume-function"
   project = "vn-cloud-resume-api-challenge"
