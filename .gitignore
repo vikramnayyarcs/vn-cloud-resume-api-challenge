@@ -1,2 +1,4 @@
 keys.json
 terraform.tfstate
+
+cloudFunction/node_modules
