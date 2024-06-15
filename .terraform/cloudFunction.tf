@@ -6,7 +6,7 @@ resource "google_storage_bucket" "terf_bucket_tff" {
 resource "google_storage_bucket_object" "source_code" {
   name   = "cloudFunction.zip"
   bucket = google_storage_bucket.terf_bucket_tff.name
-  source = "../cloudFunction.zip"
+  source = "cloudFunction.zip"
 }
 
 resource "google_cloudfunctions_function" "fun_from_tff" {
