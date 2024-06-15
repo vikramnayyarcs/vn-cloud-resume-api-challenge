@@ -1,4 +1,3 @@
-/*
 resource "google_storage_bucket" "terf_bucket_tff" {
   name     = "vn-cloud-resume-api-challenge-bucket"
   project  = "vn-cloud-resume-api-challenge"
@@ -72,4 +71,3 @@ resource "google_cloud_run_service_iam_binding" "default" {
   role     = "roles/run.invoker"
   members  = ["allUsers"]
 }
-*/
