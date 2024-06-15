@@ -3,12 +3,12 @@ data "archive_file" "cloud_function" {
   output_path = "../cloudFunction.zip"
 
   source {
-    content = file("${path.module}/cloudFunction/index.js")
+    content = file("../cloudFunction/index.js")
     filename = "index.js"
   }
 
   source {
-    content = file("${path.module}/cloudFunction/package.json")
+    content = file("../cloudFunction/package.json")
     filename = "package.json"
   }
 }
