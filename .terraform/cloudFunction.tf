@@ -11,6 +11,7 @@ resource "google_storage_bucket_object" "source_code" {
 
 resource "google_cloudfunctions_function" "fun_from_tff" {
   name        = "vn-cloud-resume-api-challenge-cloud-function"
+  project = "vn-cloud-resume-api-challenge"
   region      = "us-central1"
   runtime     = "nodejs16"
   description = "Cloud Function created with Terraform for the Cloud Resume API Challenge."
@@ -27,6 +28,7 @@ resource "google_cloudfunctions_function" "fun_from_tff" {
 
 resource "google_cloudfunctions_function_iam_member" "allow_access_tff" {
   region         = "us-central1"
+  project = "vn-cloud-resume-api-challenge"
   cloud_function = google_cloudfunctions_function.fun_from_tff.name
   role           = "roles/cloudfunctions.invoker"
   member         = "allUsers"
