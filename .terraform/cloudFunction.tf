@@ -3,6 +3,10 @@ resource "google_storage_bucket" "terf_bucket_tff" {
   location = "us-central1"
 }
 
+resource "google_project_service" "cloud_run_api" {
+  service = "run.googleapis.com"
+}
+
 resource "google_storage_bucket_object" "source_code" {
   name   = "cloudFunction.zip"
   bucket = google_storage_bucket.terf_bucket_tff.name
@@ -58,6 +62,9 @@ resource "google_cloudfunctions2_function" "function" {
     timeout_seconds                = 60
     all_traffic_on_latest_revision = true
   }
+  depends_on = [ 
+    google_project_service.cloud_run_api
+  ]
 }
 
 output "function_uri" {
