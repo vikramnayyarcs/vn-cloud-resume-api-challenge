@@ -35,7 +35,6 @@ resource "google_cloudfunctions_function_iam_member" "allow_access_tff" {
 
 resource "google_cloudfunctions2_function" "function" {
   name        = "cloud-resume-function"
-  project        = "vn-cloud-resume-api-challenge"
   location    = "us-central1"
   description = "a new function"
 
