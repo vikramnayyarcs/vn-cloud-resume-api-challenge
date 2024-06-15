@@ -30,7 +30,7 @@ exports.getResumeData = async(req, res) => {
       res.status(404).send("Resume data not found");
     }
   }
-  catch {
-    res.status(500).send("Something Went Wrong")
+  catch(error) {
+    res.status(500).send(error)
   }
 };
