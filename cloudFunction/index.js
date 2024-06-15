@@ -4,7 +4,7 @@ const { Firestore } = require("@google-cloud/firestore");
 
 const firestore = new Firestore({
   projectId: "vn-cloud-resume-api-challenge",
-  databaseId: "cloud-resume-challenge-firestore-database",
+  databaseId: "(default)",
 });
 
 /**
