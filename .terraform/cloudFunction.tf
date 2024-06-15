@@ -1,8 +1,3 @@
-provider "google" {
-  project = "158947983886"
-  region  = "us-central1"
-}
-
 resource "google_storage_bucket" "terf_bucket_tff" {
   name     = "vn-cloud-resume-api-challenge-bucket"
   project  = "158947983886"
