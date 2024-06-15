@@ -13,23 +13,6 @@ resource "google_storage_bucket_object" "source_code" {
   source = "../cloudFunction.zip"
 }
 
-resource "google_cloudfunctions_function" "fun_from_tff" {
-  name        = "vn-cloud-resume-api-challenge-cloud-function"
-  project = "vn-cloud-resume-api-challenge"
-  region      = "us-central1"
-  runtime     = "nodejs16"
-  description = "Cloud Function created with Terraform for the Cloud Resume API Challenge."
-
-  available_memory_mb   = 128
-  source_archive_bucket = google_storage_bucket.terf_bucket_tff.name
-  source_archive_object = google_storage_bucket_object.source_code.name
-
-  trigger_http = true
-  entry_point  = "getResumeData"
-
-  depends_on = [google_storage_bucket_object.source_code]
-}
-
 resource "google_cloudfunctions_function_iam_member" "allow_access_tff" {
   region         = "us-central1"
   project = "vn-cloud-resume-api-challenge"
