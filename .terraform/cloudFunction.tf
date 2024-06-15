@@ -27,7 +27,6 @@ resource "google_cloudfunctions_function" "fun_from_tff" {
 
 resource "google_cloudfunctions_function_iam_member" "allow_access_tff" {
   region         = "us-central1"
-  project        = "cloud-resume-api-challenge"
   cloud_function = google_cloudfunctions_function.fun_from_tff.name
   role           = "roles/cloudfunctions.invoker"
   member         = "allUsers"
