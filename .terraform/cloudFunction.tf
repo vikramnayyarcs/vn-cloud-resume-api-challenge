@@ -1,15 +1,14 @@
-data "archive_file" "cloud_function_files" {
+data "archive_file" "cloud_function" {
   type        = "zip"
-  output_path = "../"
-  excludes    = ["../cloudFunction/node_modules", "../cloudFunction/package-lock.json"]
+  output_path = "../cloudFunction.zip"
 
   source {
-    content  = data.index.js.rendered
+    content = file("${path.module}/cloudFunction/index.js")
     filename = "index.js"
   }
 
   source {
-    content  = data.package.json.rendered
+    content = file("${path.module}/cloudFunction/package.json")
     filename = "package.json"
   }
 }
