@@ -1,6 +1,6 @@
 resource "google_storage_bucket" "terf_bucket_tff" {
   name     = "vn-cloud-resume-api-challenge-bucket"
-  project  = "158947983886"
+  project  = "vn-cloud-resume-api-challenge"
   location = "US"
 }
 
