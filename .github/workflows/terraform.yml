@@ -82,6 +82,8 @@ jobs:
       env:
         GOOGLE_CREDENTIALS: ${{ secrets.GOOGLE_CREDENTIALS }} 
 
+        run: terraform force-unlock 1718472644901393
+
     # Checks that all Terraform configuration files adhere to a canonical format
     # - name: Terraform Format
     #  run: terraform fmt -check
