@@ -1,3 +1,19 @@
+data "archive_file" "cloud_function_files" {
+  type        = "zip"
+  output_path = "../"
+  excludes    = ["../cloudFunction/node_modules", "../cloudFunction/package-lock.json"]
+
+  source {
+    content  = data.index.js.rendered
+    filename = "index.js"
+  }
+
+  source {
+    content  = data.package.json.rendered
+    filename = "package.json"
+  }
+}
+
 resource "google_storage_bucket" "terf_bucket_tff" {
   name     = "vn-cloud-resume-api-challenge-bucket"
   location = "us-central1"
