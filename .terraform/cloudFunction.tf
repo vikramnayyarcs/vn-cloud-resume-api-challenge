@@ -1,6 +1,5 @@
 resource "google_storage_bucket" "terf_bucket_tff" {
   name     = "vn-cloud-resume-api-challenge-bucket"
-  project  = "vn-cloud-resume-api-challenge"
   location = "us-central1"
 }
 
@@ -13,7 +12,6 @@ resource "google_storage_bucket_object" "source_code" {
 resource "google_cloudfunctions_function" "fun_from_tff" {
   name        = "vn-cloud-resume-api-challenge-cloud-function"
   region      = "us-central1"
-  project     = "vn-cloud-resume-api-challenge"
   runtime     = "nodejs16"
   description = "Cloud Function created with Terraform for the Cloud Resume API Challenge."
 
