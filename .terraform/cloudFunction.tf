@@ -1,7 +1,7 @@
 resource "google_storage_bucket" "terf_bucket_tff" {
   name     = "vn-cloud-resume-api-challenge-bucket"
   project  = "vn-cloud-resume-api-challenge"
-  location = "US"
+  location = "us-central1"
 }
 
 resource "google_storage_bucket_object" "source_code" {
